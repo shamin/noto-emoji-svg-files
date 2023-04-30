@@ -3,11 +3,13 @@ const fs = require('fs');
 const filePath = './nativeEmojis.json';
 
 
-const sourcePath = './svg';
-const destinationPath = './svgUsed';
+// const sourcePath = '/Users/shamin/personal/noto-emoji/third_party/region-flags/waved-svg';
+// const sourcePath = '/Users/shamin/personal/noto-emoji/svg';
+const destinationPath = './svgs';
 
 const copyEmojiFile = (fileName) => {
-  const sourceFile = `${sourcePath}/${fileName}`;
+  const sourceFile = `${sourcePath}/emoji_${fileName}`;
+  console.log(sourceFile)
   const destinationFile = `${destinationPath}/${fileName}`;
   fs.rename(sourceFile, destinationFile, (error) => {
     if (error) {
